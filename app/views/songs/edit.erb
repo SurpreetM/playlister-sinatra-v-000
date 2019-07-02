@@ -11,7 +11,9 @@ Editing Song
 
   <label>Genres:<label>
     <%Genre.all.each do |genre|%>
-      <input id="<%=genre.name%>" type="checkbox" name="Genres[]" value="<%=genre.id%>"><%=genre.name%>
+      <input id="<%=genre.name%>" type="checkbox" name="Genres[]" value="<%=genre.id%>"
+      <%='checked' if @song.genres.include?(genre) %>>>
+      <%=genre.name%>
     <%end%>
 
   <input type="submit" value="Save">
