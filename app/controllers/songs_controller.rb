@@ -35,7 +35,9 @@ class SongsController < ApplicationController
 
   patch '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
-    redirect to '/songs/show'
+    #edit song attibutes here
+    @song.save
+    redirect to "/songs/#{@song.slug}"
   end
 
 
